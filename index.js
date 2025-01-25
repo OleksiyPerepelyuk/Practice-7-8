@@ -15,7 +15,6 @@
 //   alert(input.value);
 // }
 
-
 //task-3
 // const inputFirst = document.querySelector('#first-input');
 // const inputSecond = document.querySelector('#second-input');
@@ -30,12 +29,36 @@
 
 //task-4
 
-const btn = document.querySelector('button');
-const arr = document.querySelectorAll('p');
+// const btn = document.querySelector('button');
+// const arr = document.querySelectorAll('p');
 
-btn.addEventListener('click', changeTextContent);
-function changeTextContent(){
-    arr.forEach((paragraph, index)=>{
-        paragraph.textContent += index + 1;
-    });
+// btn.addEventListener('click', changeTextContent);
+// function changeTextContent(){
+//     arr.forEach((paragraph, index)=>{
+//         paragraph.textContent += index + 1;
+//     });
+// }
+
+// task 5
+// const inputTest = document.querySelector("#test");
+// const inputResult = document.querySelector("#result");
+// const btn = document.querySelector("button");
+// btn.addEventListener("click", result);
+// function result() {
+//   if (isNaN(inputTest.value)) {
+//     return alert("Ввели не число");
+//   }
+//   inputResult.value = inputTest.value ** 2;
+// }
+
+// task 6
+const title = document.querySelector("h1");
+const list = document.createElement("ul");
+let message = prompt();
+while (message !== null) {
+  const listTitle = document.createElement("li");
+  listTitle.textContent = message;
+  list.appendChild(listTitle);
+  message = prompt();
 }
+title.after(list);
