@@ -52,13 +52,36 @@
 // }
 
 // task 6
-const title = document.querySelector("h1");
-const list = document.createElement("ul");
-let message = prompt();
-while (message !== null) {
-  const listTitle = document.createElement("li");
-  listTitle.textContent = message;
-  list.appendChild(listTitle);
-  message = prompt();
+// const title = document.querySelector("h1");
+// const list = document.createElement("ul");
+// let message = prompt();
+// while (message !== null) {
+//   const listTitle = document.createElement("li");
+//   listTitle.textContent = message;
+//   list.appendChild(listTitle);
+//   message = prompt();
+// }
+// title.after(list);
+
+//task 7
+
+// const links = document.querySelectorAll('a');
+// links.forEach((link) => link.addEventListener('mouseover', addTitle));
+// function addTitle(event) {
+//   event.target.title = event.target.textContent;
+// }
+
+// task 8
+const spans = document.querySelectorAll('span');
+spans.forEach((span) => span.addEventListener('click', setBgRed));
+
+function setBgRed(event) {
+  event.target.style.backgroundColor = 'red';
+  event.target.addEventListener('click', setBgGreen);
+  event.target.removeEventListener('click', setBgRed);
 }
-title.after(list);
+function setBgGreen(event) {
+  event.target.style.backgroundColor = 'green';
+  event.target.addEventListener('click', setBgRed);
+  event.target.removeEventListener('click', setBgGreen);
+}
